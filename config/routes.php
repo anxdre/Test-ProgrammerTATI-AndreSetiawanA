@@ -51,7 +51,11 @@ return [
 
     'web' => [
         /** @inject web **/
-        \App\Http\Controllers\Auth\AuthenticatedSessionController::class
+        \App\Http\Controllers\Auth\AuthenticatedSessionController::class,
+        \App\Http\Controllers\DailyLogController::class,
+        \App\Http\Controllers\LogVerificationController::class,
+        \App\Http\Controllers\RoleController::class,
+        \App\Http\Controllers\StaffRelationController::class
     ],
     'api' => [
         /** @inject api **/

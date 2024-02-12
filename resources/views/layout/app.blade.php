@@ -23,6 +23,7 @@
     <link href="{{asset('')}}sass/semi-dark.css" rel="stylesheet">
     <link href="{{asset('')}}sass/bordered-theme.css" rel="stylesheet">
     <link href="{{asset('')}}sass/responsive.css" rel="stylesheet">
+    @stack('post-styles')
 
 </head>
 @include('layout.header')
@@ -34,7 +35,7 @@
 <!--start main wrapper-->
 <main class="main-wrapper">
     <div class="main-content">
-
+        @yield('content')
     </div>
 </main>
 <!--end main wrapper-->
@@ -451,6 +452,7 @@
     $(".data-attributes span").peity("donut")
 </script>
 <script src="{{asset('')}}assets/js/main.js"></script>
+@stack('post-scripts')
 
 
 </body>

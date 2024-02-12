@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
+use Dentro\Yalr\Attributes\Get;
+use Dentro\Yalr\Attributes\Post;
 use Dentro\Yalr\Attributes\Prefix;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -17,7 +19,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Display the login view.
      */
-
+    #[Get('login', 'login')]
     public function create(): View
     {
         return view('auth.login');
@@ -26,8 +28,10 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
+    #[Post('login', 'login-request')]
     public function store(LoginRequest $request): RedirectResponse
     {
+
         $request->authenticate();
 
         $request->session()->regenerate();
@@ -38,6 +42,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Destroy an authenticated session.
      */
+    #[Post('logout', 'logout')]
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();

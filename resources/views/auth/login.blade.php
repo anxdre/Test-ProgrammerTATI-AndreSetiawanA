@@ -53,31 +53,21 @@
                         <p class="mb-0">Enter your credentials to login your account</p>
 
                         <div class="form-body mt-4">
-                            <form class="row g-3" method="POST" action="{{route('login-request')}}">
+                            <form class="row g-3" method="post" action="{{route('login-request')}}">
                                 @csrf
                                 <div class="col-12">
                                     <label for="inputEmailAddress" class="form-label">Email</label>
-                                    <input type="email"
-                                           @error('email') is-invalid @enderror name="email"
-                                           class="form-control"
-                                           id="inputEmailAddress" placeholder="email">
-
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong></span>
-                                    @enderror
+                                    <input type="email" name="email" class="form-control" id="inputEmailAddress"
+                                           placeholder="email">
                                 </div>
                                 <div class="col-12">
                                     <label for="inputChoosePassword" class="form-label">Password</label>
                                     <div class="input-group" id="show_hide_password">
-                                        <input type="password" @error('email') is-invalid @enderror class="form-control" id="inputChoosePassword"
-                                               value="12345678" placeholder="Enter Password">
+                                        <input type="password" class="form-control" id="inputChoosePassword"
+                                               placeholder="Enter Password" name="password">
+
                                         <a href="javascript:;" class="input-group-text bg-transparent"><i
                                                 class="bi bi-eye-slash-fill"></i></a>
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong></span>
-                                        @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -89,6 +79,9 @@
                                 <div class="col-md-6 text-end"><a href="auth-cover-forgot-password.html">Forgot Password
                                         ?</a>
                                 </div>
+                                @if($errors->any())
+                                    {!! implode('', $errors->all('<p class="text-danger">:message</p>')) !!}
+                                @endif
                                 <div class="col-12">
                                     <div class="d-grid">
                                         <button type="submit" class="btn btn-primary">Login</button>
