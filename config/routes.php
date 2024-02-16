@@ -59,5 +59,6 @@ return [
     ],
     'api' => [
         /** @inject api **/
+        \App\Http\Controllers\Api\WilayahController::class,
     ],
 ];

@@ -6,12 +6,8 @@
     </div>
     <div class="quick-menu">
         <nav class="nav flex-column gap-1">
-            <a class="nav-link" href="index.html"><i class="material-icons-outlined">home</i></a>
-            <a class="nav-link" href="index2.html"><i class="material-icons-outlined">poll</i></a>
-            <a class="nav-link" href="javascript:;"><i class="material-icons-outlined">apps</i></a>
-            <a class="nav-link" href="ecommerce-products.html"><i class="material-icons-outlined">shopping_cart</i></a>
-            <a class="nav-link" href="javascript:;"><i class="material-icons-outlined">forum</i></a>
-            <a class="nav-link" href="javascript:;"><i class="material-icons-outlined">event</i></a>
+            <a class="nav-link" href="{{route('log.daily-log')}}"><i class="material-icons-outlined">home</i></a>
+            <a class="nav-link" href="{{route('verification.all')}}"><i class="material-icons-outlined">task</i></a>
         </nav>
     </div>
     <div class="mini-footer dark-mode">

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('verifications', function (Blueprint $table) {
             $table->foreignId('daily_log_id')->unique()->constrained();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->nullable()->constrained();
             $table->enum('status',['pending','true','false']);
             $table->timestamps();
         });

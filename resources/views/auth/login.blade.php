@@ -53,7 +53,7 @@
                         <p class="mb-0">Enter your credentials to login your account</p>
 
                         <div class="form-body mt-4">
-                            <form class="row g-3" method="post" action="{{route('login-request')}}">
+                            <form class="row g-3" method="post" action="{{route('auth.login-request')}}">
                                 @csrf
                                 <div class="col-12">
                                     <label for="inputEmailAddress" class="form-label">Email</label>

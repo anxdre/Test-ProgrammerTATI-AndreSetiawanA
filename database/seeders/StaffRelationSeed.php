@@ -14,7 +14,7 @@ class StaffRelationSeed extends Seeder
     public function run(): void
     {
         //bawahan kepala dinas
-        for ($i = 1; $i <= 5; $i++) {
+        for ($i = 2; $i <= 5; $i++) {
             DB::table('staff_relations')->insert([
                 'user_id' => 1,
                 'user_staff' => $i
